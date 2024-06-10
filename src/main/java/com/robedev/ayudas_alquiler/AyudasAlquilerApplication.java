@@ -14,11 +14,12 @@ import java.util.Optional;
 
 @SpringBootApplication
 public class AyudasAlquilerApplication implements CommandLineRunner {
-	@Autowired
-	BeneficiarioService beneficiarioService;
 
-	@Autowired
-	BeneficiarioRepository beneficiarioRepository;
+	//@Autowired
+	//BeneficiarioService beneficiarioService;
+
+	//@Autowired
+	//BeneficiarioRepository beneficiarioRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(AyudasAlquilerApplication.class, args);
@@ -26,6 +27,7 @@ public class AyudasAlquilerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+	/*
 		List<Beneficiario> existingBeneficiarios = beneficiarioRepository.findAll();
 		if (existingBeneficiarios.isEmpty()) {
 			String archivoPDF = "anexo.pdf";
@@ -40,15 +42,7 @@ public class AyudasAlquilerApplication implements CommandLineRunner {
 			System.out.println("Los datos ya existen en la base de datos, no se requiere cargar el archivo PDF.");
 		}
 
-		try{
-
-		Optional<Beneficiario> beneficiario = beneficiarioRepository.findByExpediente(" A-2023-24-0003");
-		System.out.println(beneficiario.get().getDocumento());
-		}catch (Exception e){
-			System.out.println("El documento no exist: " + e.getMessage());
-		}
-		//Optional<Beneficiario> beneficiario2 = beneficiarioRepository.findByExpediente(" A-2023-24-0936");
-		//System.out.println(beneficiario2.get().getBeneficiario());
+	 */
 
 	}
 }

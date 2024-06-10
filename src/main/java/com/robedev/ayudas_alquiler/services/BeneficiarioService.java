@@ -75,4 +75,14 @@ public class BeneficiarioService {
                 .orElseGet(() -> ResponseEntity
                 .notFound().build());
     }
+
+    public ResponseEntity<List<Beneficiario>> findByBeneficiario(String beneficiario) {
+        List<Beneficiario> beneficiarios = beneficiarioRepository.findByKeywordInNombreOrApellido(beneficiario);
+        if (!beneficiarios.isEmpty()) {
+            return ResponseEntity.ok(beneficiarios);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

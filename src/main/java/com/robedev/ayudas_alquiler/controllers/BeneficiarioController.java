@@ -14,15 +14,20 @@ import java.util.List;
 public class BeneficiarioController {
 
     @Autowired
-    BeneficiarioService service;
+    BeneficiarioService beneficiarioService;
 
     @GetMapping(value = "/all")
     public List<Beneficiario> findAll(){
-        return service.findAll();
+        return beneficiarioService.findAll();
     }
 
     @GetMapping(value = "/expediente{expediente}")
-    public ResponseEntity<Beneficiario> findById(@PathVariable String expediente){
-        return service.findByExpediente(expediente);
+    public ResponseEntity<Beneficiario> findByExpediente(@PathVariable String expediente){
+        return beneficiarioService.findByExpediente(expediente);
+    }
+
+    @GetMapping(value = "/beneficiario{beneficiario}")
+    public ResponseEntity<List<Beneficiario>> findByBeneficiario(@PathVariable String beneficiario){
+        return beneficiarioService.findByBeneficiario(beneficiario);
     }
 }

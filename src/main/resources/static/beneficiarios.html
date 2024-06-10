@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Beneficiarios</title>
+    <!-- Agregar Bootstrap desde CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <h1>Lista de Beneficiarios</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Expediente</th>
+            <th>Documento</th>
+            <th>Beneficiario</th>
+            <th>Puntuación de Criterios</th>
+            <th>Subvención Máxima</th>
+            <th>Porcentaje de Subvención</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterar sobre los datos recibidos -->
+        <tr th:each="beneficiario : ${beneficiarios}">
+            <td th:text="${beneficiario.expediente}"></td>
+            <td th:text="${beneficiario.documento}"></td>
+            <td th:text="${beneficiario.beneficiario}"></td>
+            <td th:text="${beneficiario.putuacionCriterios}"></td>
+            <td th:text="${beneficiario.subvencionMaxima}"></td>
+            <td th:text="${beneficiario.porcentajeSubvencion}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
